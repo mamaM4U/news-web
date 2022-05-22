@@ -27,7 +27,12 @@ function NewsArticle({ data }) {
       <span className="news__published">{data.publishedAt}</span>
       <span className="news__source">{data.source.name}</span>
       <div className="news__buttons">
-          <button>See More</button>
+          <button
+          onClick={(e) => {
+            e.preventDefault();
+            window.open(data.url, "_blank");
+            }}
+          >See More</button>
           <button
             onClick={() =>
               buttonClick()
